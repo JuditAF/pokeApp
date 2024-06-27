@@ -3,8 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 4rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 main {
@@ -20,5 +19,55 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    background-color: brown;
+}
+
+h1 {
+    font-size: 5rem;
+    margin: .5rem;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem; 
+    margin-top: 1.5rem;
+}
+
+.formulario input {
+    width: 24rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding: .3rem;
+    box-shadow: inset 0 0 10px #000000;
+}
+
+.formulario button {
+    width: 7rem;
+    font-size: 1rem;
+    cursor: pointer;
+    color: rgb(250, 252, 236);
+    background-image: url(../assets/pokeball.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: brown;
+    border: none;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items:last baseline;
+    margin-left: 8rem;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
