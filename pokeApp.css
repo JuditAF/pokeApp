@@ -35,7 +35,7 @@ h1 {
 .formulario {
     display: flex;
     flex-direction: column;
-    padding: 1rem; 
+    padding: 1rem;
     margin-top: 1.5rem;
 }
 
@@ -62,12 +62,41 @@ h1 {
     height: 100px;
     display: flex;
     justify-content: center;
-    align-items:last baseline;
+    align-items: last baseline;
     margin-left: 8rem;
 }
 
+.formulario button:hover {
+    transform: scale(1.1);
+}
+
+hr {
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
 .table {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    color: #fff;
+    table-layout: fixed;
+    margin-bottom: 4rem;
+}
+
+thead {
+    width: 100%;
+    font-size: 1.2rem;
+    background-color: rgb(147, 14, 14);
+}
+
+tbody tr:hover{
+    background: rgba(243, 103, 199, 0.4);
+}
+
+tr,
+td {
+    font-weight: 100;
+    letter-spacing: .1rem;
+    text-align: left;
+    vertical-align: top;
+    border-spacing: 0;
+    border-collapse: collapse;
 }
