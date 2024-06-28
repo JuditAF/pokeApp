@@ -15,20 +15,13 @@ class Pokemon {
 async function getPokemonParams(nombre) {
     try {
 
-        let newPokemon = new Pokemon(document.getElementById("nombre").value.toLowerCase(),
-                                     document.getElementById("imagen").value,
-                                     document.getElementById("habilidades").value,
-                                     document.getElementById("estadisticas").value,
-                                     document.getElementById("tipo").value,
-                                     document.getElementById("peso").value
-
-        );
+        let nombrePokemon = document.getElementById("nombre").value.toLowerCase();
 
         let url = " https://pokeapi.co/api/v2/pokemon/" + nombre;
 
         let param = {
                       headers: {"Content-Type": "aplication/json; charset= UTF-8"},
-                      body:JSON.stringify(newPokemon),
+                    //   body:JSON.stringify(nombrePokemon),
                       method: "GET"
                     };
         
@@ -36,8 +29,10 @@ async function getPokemonParams(nombre) {
 
         let result = await data.json();
 
+        document.getElementById("response").innerHTML = JSON.stringify(result[0]);
+
         console.log(result);
-        
+
     }
     catch(error) { 
 
