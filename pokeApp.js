@@ -1,7 +1,7 @@
 
 class Pokemon {
 
-    constructor (nombre, imagen, [habilidades], [estadisticas], tipo, peso) {
+    constructor(nombre, imagen, [habilidades], [estadisticas], tipo, peso) {
 
         this.nombre = nombre;
         this.imagen = imagen;
@@ -12,20 +12,36 @@ class Pokemon {
     }
 };
 
-function postPokemon (nombre, imagen, habilidades) {
+async function getPokemonParams(nombre) {
+    try {
 
-    let newPokemon = new Pokemon (document.getElementById("nombre"), 
-                                  document.getElementById("imagen"),
-                                  document.getElementById("habilidades")
-                                );
+        let newPokemon = new Pokemon(document.getElementById("nombre").value.toLowerCase(),
+                                     document.getElementById("imagen").value,
+                                     document.getElementById("habilidades").value,
+                                     document.getElementById("estadisticas").value,
+                                     document.getElementById("tipo").value,
+                                     document.getElementById("peso").value
 
-    console.log(JSON.stringify(newPokemon));
+        );
 
-    let xhttp = new XMLHttpRequest();
+        let url = " https://pokeapi.co/api/v2/pokemon/" + nombre;
 
-    xhttp.open("POST", "http://localhost:3000/poke", true);
-    xhttp.setRequestHeader("Content-Type", "aplication/json");
-    xhttp.send(JSON.stringify(newPokemon));
+        let param = {
+                      headers: {"Content-Type": "aplication/json; charset= UTF-8"},
+                      body:JSON.stringify(newPokemon),
+                      method: "GET"
+                    };
+        
+        let data = await fetch(url, param);
+
+        let result = await data.json();
+
+        console.log(result);
+        
+    }
+    catch(error) { 
+
+        console.log(error);
+    }
 };
 
-function getPokemon () {};
