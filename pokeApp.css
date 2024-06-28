@@ -87,6 +87,10 @@ thead {
     background-color: rgb(147, 14, 14);
 }
 
+th {
+   padding-left: 3rem;
+}
+
 tbody tr:hover{
     background: rgba(243, 103, 199, 0.4);
 }
@@ -99,4 +103,14 @@ td {
     vertical-align: top;
     border-spacing: 0;
     border-collapse: collapse;
+    padding: .2rem;
+    margin: .1rem;
+}
+
+.arr {
+    width: 35%;
+}
+
+.atrib {
+    width: 15%;
 }

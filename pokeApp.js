@@ -1,11 +1,14 @@
 
 class Pokemon {
 
-    constructor (nombre, imagen, [habilidades]) {
+    constructor (nombre, imagen, [habilidades], [estadisticas], tipo, peso) {
 
         this.nombre = nombre;
         this.imagen = imagen;
-        this.[habilidades] = [habilidades];
+        this.habilidades = [habilidades];
+        this.estadisticas = [estadisticas];
+        this.tipo = tipo;
+        this.peso = peso;
     }
 };
 
