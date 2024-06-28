@@ -29,7 +29,13 @@ async function getPokemonParams(nombre) {
 
         let result = await data.json();
 
-        document.getElementById("response").innerHTML = JSON.stringify(result[0]);
+        document.getElementById("pokeHabilidades").innerHTML = JSON.stringify(result.abilities[i].ability.name);
+        document.getElementById("pokeEstadistica").innerHTML = JSON.stringify(result.stats[i].stat.name);
+        document.getElementById("pokeEstaDato").innerHTML = JSON.stringify(result.stats[i].base_stat);
+        document.getElementById('pokeNombre').innerText = pokemon.name;
+        document.getElementById('pokeImagen').src = pokemon.sprites.front_default;
+        document.getElementById('pokePeso') = pokemon.weight;
+        document.getElementById('pokeTipo') = pokemon.type[0].type.name;
 
         console.log(result);
 
