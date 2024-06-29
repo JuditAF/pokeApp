@@ -12,35 +12,35 @@ class Pokemon {
     }
 };
 
-async function getPokemonParams(nombre) {
+async function mostrarPokemon(nombre) {
     try {
 
         let nombrePokemon = document.getElementById("nombre").value.toLowerCase();
 
-        let url = " https://pokeapi.co/api/v2/pokemon/" + nombre;
+        console.log(nombrePokemon);
+
+
+        let url = " https://pokeapi.co/api/v2/pokemon/" + nombrePokemon;
 
         let param = {
-                      headers: {"Content-Type": "aplication/json; charset= UTF-8"},
-                    //   body:JSON.stringify(nombrePokemon),
-                      method: "GET"
-                    };
-        
-        let data = await fetch(url, param);
+            headers: { "Content-Type": "aplication/json; charset= UTF-8" },
+            method: "GET"
+        };
 
+        let data = await fetch(url, param)
         let result = await data.json();
-
-        document.getElementById("pokeHabilidades").innerHTML = JSON.stringify(result.abilities[i].ability.name);
-        document.getElementById("pokeEstadistica").innerHTML = JSON.stringify(result.stats[i].stat.name);
-        document.getElementById("pokeEstaDato").innerHTML = JSON.stringify(result.stats[i].base_stat);
-        document.getElementById('pokeNombre').innerText = pokemon.name;
-        document.getElementById('pokeImagen').src = pokemon.sprites.front_default;
-        document.getElementById('pokePeso') = pokemon.weight;
-        document.getElementById('pokeTipo') = pokemon.type[0].type.name;
 
         console.log(result);
 
+        document.getElementById("pokeHabilidades").innerHTML = result.abilities.map(ability => {let fila = tablePoke.insertRow()
+                                                                                                fila.innerText = ability.ability.name});
+        document.getElementById('pokeNombre').innerText = result.name.toLowerCase();
+        document.getElementById('pokePeso').innerText = result.weight;
+        document.getElementById('pokeTipo').innerHTML = result.types[0].type.name;
+        document.getElementById('pokeImagen').src = result.sprites.front_default;
+
     }
-    catch(error) { 
+    catch (error) {
 
         console.log(error);
     }

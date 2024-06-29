@@ -19,46 +19,39 @@
 
         <div id="form" class="formulario">
 
-            <input type="text" placeholder="Consulta la especie capturada" />
+            <input type="text" id="nombre" placeholder="Consulta la especie capturada" />
 
-            <button type="button" onclick="mostrarPokemon()">Capturar</button>
+            <button type="button" onclick="mostrarPokemon(nombre)"></button>
 
         </div>
 
         <div class="tabla">
 
-            <img id="pokeImagen" src="../assets/pika.png" width="300px" alt="" />
+            <img id="pokeImagen" src="../assets/pika.png" width="300px" alt="imagen del Pokemon" />
             <hr>
 
-            <table class="table">
+            <table class="table" id="tablePoke">
 
                 <thead>
-                    <th colspan="4" id="pokeNombre">
-                        Nombre Pokemon
-                    </th>
+                    <th colspan="3" id="pokeNombre">Nombre Pokemon</th>
                 </thead>
-                <tbody>
+                <tbody id="data">
                     <tr>
 
                         <td class="arr">Habilidades</td>
-
-                        <td class="arr">Estadísticas</td>
 
                         <td class="atrib">Tipo</td>
 
                         <td class="atrib">Peso</td>
 
                     </tr>
-
                     <tr>
 
-                        <td class="arr" id="pokeHabilidades">habilidad</td>
+                        <td class="arr" id="pokeHabilidades"></td>
 
-                        <td class="arr" id="pokeEstadistica: pokeEstaDato">estadísticas</td>
+                        <td class="atrib" id="pokeTipo"></td>
 
-                        <td class="atrib" id="pokeTipo">tipo</td>
-
-                        <td class="atrib" id="pokePeso">peso</td>
+                        <td class="atrib" id="pokePeso"></td>
 
                     </tr>
                 </tbody>
